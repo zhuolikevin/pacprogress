@@ -1,23 +1,41 @@
-function PacProgress(options) {
+function PacProgress(selector, options) {
+    this.selector = selector;
     this.canvasWidth = options.width;
     this.canvasHeight = options.height;
     this.pacmanColor = options.pacmanColor || '#fffb00';
-    this.totalDots = 50;
+    this.totalDots = options.totalDots || 50;
     this.dotsGap = this.canvasWidth / this.totalDots;
-    this.pacmanRadius = 10;
+    this.pacmanRadius = this.canvasHeight / 2 < this.dotsGap
+        ? this.canvasHeight / 2
+        : this.dotsGap - 2;
+    this.dotRadius = this.pacmanRadius >= 8 ? 2 : 1;
 }
 
 PacProgress.prototype.draw = function(percentage) {
-    var canvas = document.getElementById('pac-line');
-    if (canvas.getContext) {
-        var ctx = canvas.getContext('2d');
+    var canvas = $(this.selector)[0];
+    var getLatestDotOriginX = function(i) {
+        return (i + 0.5) * this.dotsGap - this.dotRadius;
+    }.bind(this);
 
+    if (canvas.getContext) {
+        var ctx = canvas.getContext('2d'),
+            pacmanOriginX = -this.pacmanRadius / 2 +
+                percentage * this.canvasWidth / 100;
         ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
 
         // Pac-dots
         ctx.save();
         ctx.translate(this.dotsGap / 2, this.canvasHeight / 2);
-        for (var i = Math.floor(percentage / 2); i < this.totalDots; i++) {
+        for (var i = 0; i < this.totalDots; i++) {
+            if (percentage % 2 === 0 &&
+                getLatestDotOriginX(i) < pacmanOriginX + this.pacmanRadius
+            ) {
+                continue;
+            } else if (percentage % 2 === 1 &&
+                getLatestDotOriginX(i) < pacmanOriginX
+            ) {
+                continue;
+            }
             ctx.save();
             ctx.translate(i * this.dotsGap, 0);
             ctx.beginPath();
@@ -31,7 +49,7 @@ PacProgress.prototype.draw = function(percentage) {
         // Pacman
         ctx.save();
         ctx.translate(
-            (percentage - 1) * this.dotsGap / 2,
+            pacmanOriginX,
             this.canvasHeight / 2
         );
         ctx.fillStyle = this.pacmanColor;

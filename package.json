@@ -1,23 +1,26 @@
 {
-    "name": "pacprogress",
-    "version": "0.1.0",
-    "description": "Animate a progress bar with pacman game",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/zhuolikevin/pacprogress.git"
-    },
-    "keywords": [
-        "progressbar",
-        "pacman"
-    ],
-    "author": "Kevin Li <lizhuogo@gmail.com>",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/zhuolikevin/pacprogress/issues"
-    },
-    "homepage": "https://github.com/zhuolikevin/pacprogress#readme"
+  "name": "pacprogress",
+  "version": "0.1.1",
+  "description": "Animate a progress bar with pacman game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhuolikevin/pacprogress.git"
+  },
+  "keywords": [
+    "progressbar",
+    "pacman"
+  ],
+  "author": "Kevin Li <lizhuogo@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zhuolikevin/pacprogress/issues"
+  },
+  "homepage": "https://github.com/zhuolikevin/pacprogress#readme",
+  "dependencies": {
+    "jquery": "^3.1.1"
+  }
 }

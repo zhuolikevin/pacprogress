@@ -2,7 +2,7 @@
   "name": "pacprogress",
   "version": "0.2.1",
   "description": "Animate a progress bar with pacman game",
-  "main": "index.js",
+  "main": "pacprogress.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

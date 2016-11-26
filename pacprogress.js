@@ -1,9 +1,9 @@
-(function (root, factory) {
-  if(typeof define === 'function' && define.amd) {
-    define([], function(){
+(function(root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    define([], function() {
       return (root.PacProgress = factory());
     });
-  } else if(typeof module === 'object' && module.exports) {
+  } else if (typeof module === 'object' && module.exports) {
     module.exports = (root.PacProgress = factory());
   } else {
     root.PacProgress = factory(root.postal);
@@ -25,7 +25,7 @@
   PacProgress.prototype.draw = function(percentage) {
     var canvas = $(this.selector)[0];
     var getLatestDotOriginX = function(i) {
-        return (i + 0.5) * this.dotsGap - this.dotRadius;
+      return (i + 0.5) * this.dotsGap - this.dotRadius;
     }.bind(this);
 
     if (canvas.getContext) {

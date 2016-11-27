@@ -1,10 +1,10 @@
 {
   "name": "pacprogress",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "description": "Animate a progress bar with pacman game",
-  "main": "index.js",
+  "main": "pacprogress.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,10 @@
   "homepage": "https://github.com/zhuolikevin/pacprogress#readme",
   "dependencies": {
     "jquery": "^3.1.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "sinon": "^1.17.6"
   }
 }

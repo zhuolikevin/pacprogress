@@ -1,14 +1,22 @@
 # Pacman Progress Bar
 
-An HTML5-based progress bar with [Pac-Man](https://en.wikipedia.org/wiki/Pac-Man) animation.
+[![Build Status](https://travis-ci.org/zhuolikevin/pacprogress.svg?branch=dev)](https://travis-ci.org/zhuolikevin/pacprogress)
+
+An HTML5 canvas-based progress bar with [Pac-Man](https://en.wikipedia.org/wiki/Pac-Man) animation.
 
 ## Installation
 
-Install the component via [npm](https://www.npmjs.com/).
+1. Install the component via [npm](https://www.npmjs.com/).
 
-```bash
-$ npm install --save pacprogress
-```
+	```bash
+	$ npm install --save pacprogress
+	```
+
+1. Include `pacprogress.js` to your project.
+
+	```html
+	<script src="/path/to/pacprogress.js"></script>
+	```
 
 > Note: **JQuery** is required by the package.
 
@@ -21,11 +29,19 @@ $ npm install --save pacprogress
     var PacProgress = require('pacprogress');
     ```
 
-    Or simply include the `script` in your template
+    Or `define` it via AMD
 
-    ```html
-    <script src="/path/to/pacprogress/index.js"></script>
+    ```javascript
+    require.config({
+      paths: {'pacprogress': '/path/to/pacprogress.js'}
+    });
+
+    define(['pacprogress'], function(PacProgress) {
+      // Your codes
+    });
     ```
+
+    If you are not using any module loader, a global variable `window.PacProgress` is exposed by us. **Use It Directly!**
 
 1. Initialize a `canvas` tag in your HTML template.
 
@@ -39,9 +55,9 @@ $ npm install --save pacprogress
 
     ```javascript
     var pacProgress = new PacProgress('#pac-progressbar', {
-    	width: 800,
-    	height: 20,
-    	totalDots: 30
+      width: 800,
+      height: 20,
+      totalDots: 30
     });
     ```
 
@@ -52,3 +68,18 @@ $ npm install --save pacprogress
     ```
 
 ## API
+
+The progress object is initialized like:
+
+```javascript
+var pacProgress = new PacProgress(selector, options);
+```
+
+where `selector` is a jQuery selector used to target your `<canvas>`, while `options` can be configured with following APIs.
+
+| Props | Type | Description | Default Value |
+|-------|------|-------------|---------|
+| width | Number | *Required*. Width of the canvas | N/A |
+| height | Number | *Required*. Height of the canvas | N/A |
+| pacmanColor | String | Color of the pacman | '#fffb00' |
+| totalDots | Number | Total number of dots in the progressbar | 50 |

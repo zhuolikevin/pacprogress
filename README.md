@@ -1,5 +1,7 @@
 # Pacman Progress Bar
 
+[![Build Status](https://travis-ci.org/zhuolikevin/pacprogress.svg?branch=dev)](https://travis-ci.org/zhuolikevin/pacprogress)
+
 An HTML5 canvas-based progress bar with [Pac-Man](https://en.wikipedia.org/wiki/Pac-Man) animation.
 
 ## Installation
@@ -11,7 +13,7 @@ An HTML5 canvas-based progress bar with [Pac-Man](https://en.wikipedia.org/wiki/
 	```
 
 1. Include `pacprogress.js` to your project.
-	
+
 	```html
 	<script src="/path/to/pacprogress.js"></script>
 	```
@@ -28,17 +30,17 @@ An HTML5 canvas-based progress bar with [Pac-Man](https://en.wikipedia.org/wiki/
     ```
 
     Or `define` it via AMD
-    
+
     ```javascript
     require.config({
       paths: {'pacprogress': '/path/to/pacprogress.js'}
     });
-    
+
     define(['pacprogress'], function(PacProgress) {
       // Your codes
     });
     ```
-    
+
     If you are not using any module loader, a global variable `window.PacProgress` is exposed by us. **Use It Directly!**
 
 1. Initialize a `canvas` tag in your HTML template.

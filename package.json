@@ -1,6 +1,6 @@
 {
   "name": "pacprogress",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "description": "Animate a progress bar with pacman game",
   "main": "pacprogress.js",
   "scripts": {

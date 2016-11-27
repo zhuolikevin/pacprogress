@@ -75,5 +75,6 @@
       ctx.restore();
     }
   };
+
   return PacProgress;
 }));

@@ -1,6 +1,7 @@
 # Pacman Progress Bar
 
 [![Build Status](https://travis-ci.org/zhuolikevin/pacprogress.svg?branch=dev)](https://travis-ci.org/zhuolikevin/pacprogress)
+[![npm version](https://badge.fury.io/js/pacprogress.svg)](https://badge.fury.io/js/pacprogress)
 
 An HTML5 canvas-based progress bar with [Pac-Man](https://en.wikipedia.org/wiki/Pac-Man) animation.
 

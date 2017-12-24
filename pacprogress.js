@@ -14,6 +14,7 @@
     this.canvasWidth = options.width;
     this.canvasHeight = options.height;
     this.pacmanColor = options.pacmanColor || '#fffb00';
+    this.dotColor = options.dotColor || '#333333';
     this.totalDots = options.totalDots || 50;
     this.dotsGap = this.canvasWidth / this.totalDots;
     this.pacmanRadius = this.canvasHeight / 2 < this.dotsGap
@@ -37,6 +38,7 @@
       // Pac-dots
       ctx.save();
       ctx.translate(this.dotsGap / 2, this.canvasHeight / 2);
+      ctx.fillStyle = this.dotColor;
       for (var i = 0; i < this.totalDots; i++) {
         if (percentage % 2 === 0 &&
           getLatestDotOriginX(i) < pacmanOriginX + this.pacmanRadius

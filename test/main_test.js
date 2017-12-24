@@ -29,6 +29,11 @@ describe('all props should exit and with defaults if applicable', function() {
     expect(this.pacProgress.pacmanColor).to.equal('#fffb00');
   });
 
+  it('.dotColor attribute should be a string and have defaut', function() {
+    expect(this.pacProgress.pacmanColor).to.be.a('string');
+    expect(this.pacProgress.pacmanColor).to.equal('#333333');
+  });
+
   it('.totalDots attribute should be a number and have default', function() {
     expect(this.pacProgress.totalDots).to.be.a('number');
     expect(this.pacProgress.totalDots).to.equal(50);

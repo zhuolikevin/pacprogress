@@ -83,4 +83,5 @@ where `selector` is a jQuery selector used to target your `<canvas>`, while `opt
 | width | Number | *Required*. Width of the canvas | N/A |
 | height | Number | *Required*. Height of the canvas | N/A |
 | pacmanColor | String | Color of the pacman | '#fffb00' |
+| dotColor | String | Color of dots | '#333333' |
 | totalDots | Number | Total number of dots in the progressbar | 50 |
